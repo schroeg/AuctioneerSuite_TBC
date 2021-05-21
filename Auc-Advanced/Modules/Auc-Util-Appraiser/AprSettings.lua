@@ -70,9 +70,9 @@ private.durations = {
 
 if AucAdvanced.Classic then
     private.durations = {
-        { 120, _TRANS('APPR_Interface_2Hours')  },--2 hours
-        { 480, _TRANS('APPR_Interface_8Hours')  },--8 hours
-        { 1440, _TRANS('APPR_Interface_24Hours')  },--24 hours
+		{ 720, _TRANS('APPR_Interface_12Hours')  },--12 hours
+		{ 1440, _TRANS('APPR_Interface_24Hours')  },--24 hours
+		{ 2880, _TRANS('APPR_Interface_48Hours')  },--48 hours
     }
 end
 

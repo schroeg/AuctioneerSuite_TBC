@@ -622,7 +622,7 @@ end
 local lookupTimeLeft = {"30m", "2h", "12h", "48h"}
 
 if AucAdvanced.Classic then
-    lookupTimeLeft = {"30m", "2h", "8h", "24h"}
+    lookupTimeLeft = {"30m", "2h", "12h", "48h"}
 end
 
 function private.RetrievePage()

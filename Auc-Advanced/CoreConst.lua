@@ -147,8 +147,8 @@ local lib = {
 }
 
 if AucAdvanced.Classic then
-	lib.MAXSKILLLEVEL = 300
-	lib.MAXUSERLEVEL = 60
+	lib.MAXSKILLLEVEL = 375
+	lib.MAXUSERLEVEL = 70
 	lib.MAXITEMLEVEL = 92
 
     -- times are in seconds
@@ -156,20 +156,20 @@ if AucAdvanced.Classic then
 		0,
 		1800, -- 30 mins
 		7200, -- 2 hours
-		43200, -- 8 hours
+		43200, -- 12 hours
 	}
 	lib.AucMaxTimes = {
 		1800,  -- 30 mins
 		7200,  -- 2 hours
-		28800, -- 8 hours
-		86400  -- 24 hours
+		43200, -- 12 hours
+		172800 -- 48 hours
 	}
 	lib.AucTimes = {
 		0,
 		1800, -- 30 mins
 		7200, -- 2 hours
-		28800, -- 8 hours
-		86400  -- 24 hours
+		43200, -- 12 hours
+		172800 -- 48 hours
 	}
 
 end

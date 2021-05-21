@@ -247,9 +247,9 @@ do
 
     if AucAdvanced.Classic then
         auctionlength = {
-            {2, FORMATED_HOURS:format(2)},
-            {8, FORMATED_HOURS:format(8)},
+            {12, FORMATED_HOURS:format(12)},
             {24, FORMATED_HOURS:format(24)},
+            {48, FORMATED_HOURS:format(48)},
         }
     end
 

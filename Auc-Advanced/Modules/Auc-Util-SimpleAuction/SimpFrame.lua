@@ -371,8 +371,8 @@ if AucAdvanced.Classic then
     local timeLeftStrings = {
                     [1] = "30m",
                     [2] = "2h",
-                    [3] = "8h",
-                    [4] = "24h",
+                    [3] = "12h",
+                    [4] = "48h",
     }
 end
 
@@ -869,10 +869,10 @@ function private.ClearSetting()
 	frame.CurItem.remember = false
 
 if AucAdvanced.Classic then
-    if dur > 24 then dur = 24 end
-	frame.duration.time[1]:SetChecked(dur == 2)
-	frame.duration.time[2]:SetChecked(dur == 8)
-	frame.duration.time[3]:SetChecked(dur == 24)
+    if dur > 48 then dur = 48 end
+	frame.duration.time[1]:SetChecked(dur == 12)
+	frame.duration.time[2]:SetChecked(dur == 14)
+	frame.duration.time[3]:SetChecked(dur == 48)
 else
 	frame.duration.time[1]:SetChecked(dur == 12)
 	frame.duration.time[2]:SetChecked(dur == 24)
@@ -1051,7 +1051,7 @@ function private.CreateFrames()
 	}
 
     if AucAdvanced.Classic then
-        frame.duration.time.intervals = {2, 8, 24}
+        frame.duration.time.intervals = {12, 24, 48}
         frame.duration.time.selected = 24
     end
 

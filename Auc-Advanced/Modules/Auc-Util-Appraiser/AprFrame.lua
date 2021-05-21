@@ -429,10 +429,10 @@ function private.CreateFrames()
 
     if AucAdvanced.Classic then
         tleftlookup = {
-            "|cff000001|cffe5e5e530m", --30m
-            "|cff000002|cffe5e5e52h",  --2h
-            "|cff000003|cffe5e5e58h",  --8h
-            "|cff000004|cffe5e5e524h"  --24h
+			"|cff000001|cffe5e5e530m", -- 30m
+			"|cff000002|cffe5e5e52h",  --2h
+			"|cff000003|cffe5e5e512h", --12h
+			"|cff000004|cffe5e5e548h"  --48h
         }
     end
 
@@ -574,7 +574,7 @@ function private.CreateFrames()
 		frame.valuecache = {}
 
         local maxDuration = 2880;
-        if AucAdvanced.Classic then maxDuration = 1440 end
+        if AucAdvanced.Classic then maxDuration = 2880 end
 
 		local curDuration = get('util.appraiser.item.'..frame.salebox.sig..".duration") or
 			get('util.appraiser.duration') or maxDuration
@@ -1537,7 +1537,7 @@ function private.CreateFrames()
 
     local function isValidDuration(duration)
         if AucAdvanced.Classic then
-            return (duration == 120 or duration == 480 or duration == 1440)
+            return (duration == 720 or duration == 1440 or duration == 2880)
         else
             return (duration == 720 or duration == 1440 or duration == 2880)
         end

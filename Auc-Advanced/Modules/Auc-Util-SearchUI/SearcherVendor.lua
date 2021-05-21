@@ -56,8 +56,8 @@ function private.getTimeLeftStrings()
                 {0, "Any"},
                 {1, "less than 30 min"},
                 {2, "2 hours"},
-                {3, "8 hours"},
-                {4, "24 hours"},
+                {3, "12 hours"},
+                {4, "48 hours"},
             }
     else
         return {

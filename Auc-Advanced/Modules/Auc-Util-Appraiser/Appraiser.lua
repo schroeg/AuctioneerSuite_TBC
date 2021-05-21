@@ -265,7 +265,7 @@ function lib.OnLoad()
 	-- Configure our defaults
 
     local maxDuration = 2880;
-    if AucAdvanced.Classic then maxDuration = 1440 end
+    if AucAdvanced.Classic then maxDuration = 2880 end
 
 	default("util.appraiser.enable", false)
 	default("util.appraiser.bidtooltip", true)

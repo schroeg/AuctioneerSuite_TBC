@@ -303,15 +303,15 @@ if AucAdvanced.Classic then
 -- 2 would cause issues here, but already exists as a value
         [3] = 3,
 
-        [2] = 1, -- hours
-        [8] = 2,
-        [24] = 3,
+        [12] = 1, -- hours
+        [24] = 2,
+        [48] = 3,
 
-        [120] = 1, -- minutes
-        [480] = 2,
-        [1440] = 3,
+        [720] = 1, -- minutes
+        [1440] = 2,
+        [2880] = 3,
     }
-    LookupDurationHours = {2, 8, 24} -- convert duration code to hours, for display
+    LookupDurationHours = {12, 24, 48} -- convert duration code to hours, for display
 end
 
 do

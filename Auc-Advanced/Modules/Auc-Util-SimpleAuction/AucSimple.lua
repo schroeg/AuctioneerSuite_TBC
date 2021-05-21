@@ -229,7 +229,7 @@ end
 local timeLeftList = { {12, "12 hour"}, {24, "24 hour"}, {48, "48 hour"} }
 
 if AucAdvanced.Classic then
-    timeLeftList = { {2, "2 hour"}, {8, "8 hour"}, {24, "24 hour"} }
+    timeLeftList = { {2, "12 hour"}, {8, "24 hour"}, {24, "48 hour"} }
 end
 
 function private.SetupConfigGui(gui)

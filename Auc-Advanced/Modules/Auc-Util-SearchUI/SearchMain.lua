@@ -72,10 +72,10 @@ private.tleft = {
 
 if AucAdvanced.Classic then
     private.tleft = {
-        "|cff000001|cffe5e5e530m", --30m
-        "|cff000002|cffe5e5e52h",  --2h
-        "|cff000003|cffe5e5e58h",  --8h
-        "|cff000004|cffe5e5e524h"  --24h
+		"|cff000001|cffe5e5e530m", -- 30m
+		"|cff000002|cffe5e5e52h",  --2h
+		"|cff000003|cffe5e5e512h", --12h
+		"|cff000004|cffe5e5e548h"  --48h
     }
 end
 
