@@ -1468,7 +1468,7 @@ private.Prompt:SetMovable(true)
 private.Prompt:SetClampedToScreen(true)
 
 --The "graphic" frame and backdrop that we resize
-private.Prompt.Frame = CreateFrame("Frame", nil, private.Prompt)
+private.Prompt.Frame = CreateFrame("Frame", nil, private.Prompt, "BackdropTemplate")
 private.Prompt.Frame:SetPoint("CENTER", private.Prompt, "CENTER" )
 private.Prompt.Frame:SetFrameLevel(private.Prompt:GetFrameLevel() - 1) -- lower level than parent (backdrop)
 private.Prompt.Frame:SetHeight(PROMPT_HEIGHT)

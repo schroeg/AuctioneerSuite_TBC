@@ -38,7 +38,7 @@ local AppraiserValue, DisenchantValue, ProspectValue, VendorValue, bestmethod, b
 ---------------------------------------------------------
 -- Mail Interface
 ---------------------------------------------------------
-lib.ammailgui = CreateFrame("Frame", "", UIParent); lib.ammailgui:Hide()
+lib.ammailgui = CreateFrame("Frame", "", UIParent, "BackdropTemplate"); lib.ammailgui:Hide()
 function lib.makeMailGUI()
 	-- Set frame visuals
 	-- [name of frame]:SetPoint("[relative to point on my frame]","[frame we want to be relative to]","[point on relative frame]",-left/+right, -down/+up)
@@ -142,7 +142,7 @@ function lib.makeMailGUI()
 
 --[[Create  CustomMailerFrame]]
 
-	lib.CustomMailerFrame = CreateFrame("Frame", "", UIParent)
+	lib.CustomMailerFrame = CreateFrame("Frame", "", UIParent, "BackdropTemplate")
 	local frame = lib.CustomMailerFrame
 	frame:Hide()
 
@@ -221,7 +221,7 @@ function lib.makeMailGUI()
 		lib.MailListUpdate()
 	end
 
-	frame.resultlist = CreateFrame("Frame", nil, frame)
+	frame.resultlist = CreateFrame("Frame", nil, frame, "BackdropTemplate")
 	frame.resultlist:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
@@ -322,7 +322,7 @@ function lib.makeMailGUI()
 
 
 	--Frame for displaying the lists
-	frame.buttonList = CreateFrame("Frame", nil, frame)
+	frame.buttonList = CreateFrame("Frame", nil, frame, "BackdropTemplate")
 	frame.buttonList:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		edgeFile = "Interface/Tooltips/UI-Tooltip-Border",

@@ -1222,7 +1222,7 @@ function private.CreateFrames()
 		end
 	end
 
-	frame.imageview = CreateFrame("Frame", nil, frame)
+	frame.imageview = CreateFrame("Frame", nil, frame, "BackdropTemplate")
 	frame.imageview:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		edgeFile = "Interface/Tooltips/UI-Tooltip-Border",

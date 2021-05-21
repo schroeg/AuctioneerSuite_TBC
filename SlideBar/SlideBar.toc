@@ -2,7 +2,7 @@
 ## Notes: Allows alternative placement of minimap icons into an expanding bar that sits off the side of the screen.
 ## OptionalDeps: !Swatter, LibDataBroker
 ##
-## Interface: 80200
+## Interface: 20501
 ## LoadOnDemand: 0
 ## SavedVariables: SlideBarConfig
 ##

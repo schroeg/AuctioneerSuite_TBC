@@ -40,7 +40,7 @@
 		</Scripts>
 	</GameTooltip>
 
-	<Frame name="InformantFrame" toplevel="true" parent="UIParent" frameStrata="DIALOG" hidden="true" enableMouse="true" moveable="true">
+	<Frame name="InformantFrame" toplevel="true" parent="UIParent" frameStrata="DIALOG" hidden="true" enableMouse="true" moveable="true" inherits="BackdropTemplate">
 		<Size>
 			<AbsDimension x="380" y="380"/>
 		</Size>

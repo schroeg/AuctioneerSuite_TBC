@@ -1,7 +1,7 @@
 ## Title: Auc:Stat:Purchased Stats
 ## Notes: Statistics extension for Auctioneer that assumes an item was bought out if the auction ends early.
 ##
-## Interface: 80200
+## Interface: 20501
 ## LoadOnDemand: 0
 ## Disabled: 0
 ## Dependencies: Auc-Advanced

@@ -1,7 +1,7 @@
 ## Title: Auc-Auctioneer |cff774422(core)
 ## Notes: Auctioneer assists players to track item values on the Auction House; whether buying or selling.
 ##
-## Interface: 80200
+## Interface: 20501
 ## LoadOnDemand: 0
 ## Dependencies: Stubby
 ## OptionalDependencies: !nLog, SlideBar, Configator, Babylonian, DebugLib, TipHelper, LibExtraTip, LibDataBroker

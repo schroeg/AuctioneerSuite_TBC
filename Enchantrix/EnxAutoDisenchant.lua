@@ -633,7 +633,7 @@ local function initUI()
 	auto_de_frame = CreateFrame("Frame")
 
 	-- prompt frame
-	auto_de_prompt = CreateFrame("Frame", "", UIParent)
+	auto_de_prompt = CreateFrame("Frame", "", UIParent, "BackdropTemplate")
 	auto_de_prompt:Hide()
 
 	auto_de_prompt:SetPoint("TOP", "UIParent", "TOP", 0, -100)

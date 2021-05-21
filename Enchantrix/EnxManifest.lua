@@ -53,7 +53,7 @@ Enchantrix_RegisterRevision = manifest.RegisterRevision
 function manifest.ShowMessage(msg)
 	local messageFrame = manifest.messageFrame
 	if not messageFrame then
-		messageFrame = CreateFrame("Frame", "", UIParent)
+		messageFrame = CreateFrame("Frame", "", UIParent, "BackdropTemplate")
 		manifest.messageFrame = messageFrame
 
 		messageFrame:SetPoint("CENTER", UIParent, "CENTER", 0, 150)

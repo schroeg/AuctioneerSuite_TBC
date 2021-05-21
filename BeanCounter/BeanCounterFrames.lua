@@ -155,7 +155,7 @@ end
 function private.CreateFrames()
 
 	--Create the base frame for external GUI
-	local base = CreateFrame("Frame", "BeanCounterBaseFrame", UIParent)
+	local base = CreateFrame("Frame", "BeanCounterBaseFrame", UIParent, "BackdropTemplate")
 	base:SetFrameStrata("HIGH")
 	base:SetBackdrop({
 		bgFile = "Interface/Tooltips/ChatBubble-Background",
@@ -527,7 +527,7 @@ function private.CreateFrames()
 
 
 	--Create the results window
-	frame.resultlist = CreateFrame("Frame", nil, frame)
+	frame.resultlist = CreateFrame("Frame", nil, frame, "BackdropTemplate")
 	frame.resultlist:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
@@ -707,7 +707,7 @@ end
 
 function private.createDeleteItemPrompt()
 	--Create the base frame for external GUI
-	local frame = CreateFrame("Frame", nil, UIParent)
+	local frame = CreateFrame("Frame", nil, UIParent, "BackdropTemplate")
 	frame:SetFrameStrata("DIALOG")
 	frame:SetBackdrop({
 		bgFile = "Interface/Tooltips/ChatBubble-Background",
@@ -749,7 +749,7 @@ end
 --ONLOAD Error frame, used to show missmatched DB versus client errors that stop BC load NEEDS LOCALIZATION
 function private.CreateErrorFrames(error, expectedVersion, playerVersion)
 	frame = private.scriptframe
-	frame.loadError = CreateFrame("Frame", nil, UIParent)
+	frame.loadError = CreateFrame("Frame", nil, UIParent, "BackdropTemplate")
 	frame.loadError:SetFrameStrata("HIGH")
 	frame.loadError:SetBackdrop({
 		bgFile = "Interface/Tooltips/ChatBubble-Background",

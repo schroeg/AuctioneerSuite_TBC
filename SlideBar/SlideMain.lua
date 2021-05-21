@@ -335,7 +335,7 @@ end
 if lib.frame then
 	frame = lib.frame
 else
-	frame = CreateFrame("Frame", nil, UIParent)
+	frame = CreateFrame("Frame", nil, UIParent, "BackdropTemplate")
 	frame:SetToplevel(true)
 	--frame:SetClampedToScreen(true)
 	frame:SetFrameStrata("TOOLTIP")

@@ -204,7 +204,7 @@ function private.MakeGuiConfig(gui)
 	end
 
 	local content = gui.tabs[id].content
-	private.ignorelistGUI = CreateFrame("Frame", nil, content)
+	private.ignorelistGUI = CreateFrame("Frame", nil, content, "BackdropTemplate")
 	private.ignorelistGUI:SetPoint("BOTTOMRIGHT", content, "TOPRIGHT", -50, -295)
 	private.ignorelistGUI:SetPoint("TOPLEFT", content, "TOPRIGHT", -350, -20)
 	private.ignorelistGUI:SetBackdrop({

@@ -41,7 +41,7 @@ local amBTMRule, itemName, itemID, _
 function lib.GetName()
 	return libName
 end
-local autosellframe = CreateFrame("Frame", "autosellframe", UIParent); autosellframe:Hide()
+local autosellframe = CreateFrame("Frame", "autosellframe", UIParent, "BackdropTemplate"); autosellframe:Hide()
 local autoselldata = {}
 local autosell = {}
 local GetPrice = function() return 0,0 end --fake getPrice when Appraiser is not available
@@ -528,7 +528,7 @@ function lib.makeautosellgui()
 
 	autosellframe:SetMovable(true)
 	autosellframe:EnableMouse(true)
-	autosellframe.Drag = CreateFrame("Button", nil, autosellframe)
+	autosellframe.Drag = CreateFrame("Button", nil, autosellframe, "BackdropTemplate")
 	autosellframe.Drag:SetPoint("TOPLEFT", autosellframe, "TOPLEFT", 10,-5)
 	autosellframe.Drag:SetPoint("TOPRIGHT", autosellframe, "TOPRIGHT", -10,-5)
 	autosellframe.Drag:SetHeight(6)
@@ -537,7 +537,7 @@ function lib.makeautosellgui()
 	autosellframe.Drag:SetScript("OnMouseDown", function() autosellframe:StartMoving() end)
 	autosellframe.Drag:SetScript("OnMouseUp", function() autosellframe:StopMovingOrSizing() end)
 
-	autosellframe.DragBottom = CreateFrame("Button",nil, autosellframe)
+	autosellframe.DragBottom = CreateFrame("Button",nil, autosellframe, "BackdropTemplate")
 	autosellframe.DragBottom:SetPoint("BOTTOMLEFT", autosellframe, "BOTTOMLEFT", 10,5)
 	autosellframe.DragBottom:SetPoint("BOTTOMRIGHT", autosellframe, "BOTTOMRIGHT", -10,5)
 	autosellframe.DragBottom:SetHeight(6)
@@ -555,7 +555,7 @@ function lib.makeautosellgui()
 	autosellframe.autoselltitle = aautoselltitle
 
 	--Close Button
-	autosellframe.closeButton = CreateFrame("Button", nil, autosellframe, "OptionsButtonTemplate")
+	autosellframe.closeButton = CreateFrame("Button", nil, autosellframe, "OptionsButtonTemplate, BackdropTemplate")
 	autosellframe.closeButton:SetPoint("BOTTOMRIGHT", autosellframe, "BOTTOMRIGHT", -530, 10)
 	autosellframe.closeButton:SetText(("Close"))
 	autosellframe.closeButton:SetScript("OnClick",  lib.closeAutoSellGUI)
@@ -605,7 +605,7 @@ function lib.makeautosellgui()
 	autosellframe.removeitem.help:SetWidth(90)
 
 	--Create the autosell list results frame
-	autosellframe.resultlist = CreateFrame("Frame", nil, autosellframe)
+	autosellframe.resultlist = CreateFrame("Frame", nil, autosellframe, "BackdropTemplate")
 	autosellframe.resultlist:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
@@ -626,7 +626,7 @@ function lib.makeautosellgui()
 	--use our custom sort method not scrollsheets
 	autosellframe.resultlist.sheet.CustomSort = lib.CustomSort
 	--Create the bag contents frame
-	autosellframe.baglist = CreateFrame("Frame", nil, autosellframe)
+	autosellframe.baglist = CreateFrame("Frame", nil, autosellframe, "BackdropTemplate")
 	autosellframe.baglist:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		edgeFile = "Interface/Tooltips/UI-Tooltip-Border",

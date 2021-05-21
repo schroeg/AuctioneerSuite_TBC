@@ -121,7 +121,7 @@ function lib:MakeGuiConfig(gui)
 	private.frame = frame
 
 	--Create the snatch list results frame
-	frame.snatchlist = CreateFrame("Frame", nil, frame)
+	frame.snatchlist = CreateFrame("Frame", nil, frame, "BackdropTemplate")
 	frame.snatchlist:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		edgeFile = "Interface/Tooltips/UI-Tooltip-Border",

@@ -61,7 +61,7 @@ function private.CreateFrames()
 	local SelectBox = LibStub:GetLibrary("SelectBox")
 	local ScrollSheet = LibStub:GetLibrary("ScrollSheet")
 
-	frame = CreateFrame("Frame", "AucAdvAppraiserFrame", AuctionFrame)
+	frame = CreateFrame("Frame", "AucAdvAppraiserFrame", AuctionFrame, "BackdropTemplate")
 	private.frame = frame
 	local DiffFromModel = 0
 	local MatchString = ""
@@ -1027,6 +1027,7 @@ function private.CreateFrames()
 			r,g,b = frame.SetPriceColor(itemLink, 1, curBuy, curBuy, r,g,b)
 			if r then a = 0.4 end
 		end
+
 		AppraiserSaleboxBuyGold:SetBackdropColor(r,g,b, a)
 		AppraiserSaleboxBuySilver:SetBackdropColor(r,g,b, a)
 		AppraiserSaleboxBuyCopper:SetBackdropColor(r,g,b, a)
@@ -1920,7 +1921,7 @@ function private.CreateFrames()
 		private.gui:ActivateTab(private.guiId)
 	end)
 
-	frame.itembox = CreateFrame("Frame", nil, frame)
+	frame.itembox = CreateFrame("Frame", nil, frame, "BackdropTemplate")
 	frame.itembox:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
@@ -2088,7 +2089,7 @@ function private.CreateFrames()
 
 		item:SetHighlightTexture("Interface\\FriendsFrame\\UI-FriendsFrame-HighlightBar")
 	end
-	local scroller = CreateFrame("Slider", "AucAppraiserItemScroll", frame.itembox)
+	local scroller = CreateFrame("Slider", "AucAppraiserItemScroll", frame.itembox, "BackdropTemplate")
 	scroller:SetPoint("TOPRIGHT", frame.itembox, "TOPRIGHT", -1,-3)
 	scroller:SetPoint("BOTTOM", frame.itembox, "BOTTOM", 0,3)
 	scroller:SetWidth(20)
@@ -2110,7 +2111,7 @@ function private.CreateFrames()
 	frame.itembox:EnableMouseWheel(true)
 	frame.itembox:SetScript("OnMouseWheel", function(obj, dir) scroller:SetValue(scroller:GetValue() - dir) frame.SetScroll() end)
 
-	frame.salebox = CreateFrame("Frame", nil, frame)
+	frame.salebox = CreateFrame("Frame", nil, frame, "BackdropTemplate")
 	frame.salebox:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
@@ -2129,7 +2130,7 @@ function private.CreateFrames()
 	frame.salebox.slot:SetTexCoord(0.15, 0.85, 0.15, 0.85)
 	frame.salebox.slot:SetTexture("Interface\\Buttons\\UI-EmptySlot")
 
-	frame.salebox.icon = CreateFrame("Button", nil, frame.salebox)
+	frame.salebox.icon = CreateFrame("Button", nil, frame.salebox, "BackdropTemplate")
 	frame.salebox.icon:SetPoint("TOPLEFT", frame.salebox.slot, "TOPLEFT", 3, -3)
 	frame.salebox.icon:SetWidth(32)
 	frame.salebox.icon:SetHeight(32)
@@ -2187,7 +2188,7 @@ function private.CreateFrames()
 		self:SetValue(self:GetValue() - delta)
 	end
 
-	frame.salebox.stack = CreateFrame("Slider", "AppraiserSaleboxStack", frame.salebox, "OptionsSliderTemplate")
+	frame.salebox.stack = CreateFrame("Slider", "AppraiserSaleboxStack", frame.salebox, "OptionsSliderTemplate, BackdropTemplate")
 	frame.salebox.stack:SetPoint("TOPLEFT", frame.salebox.slot, "BOTTOMLEFT", 0, -5)
 	frame.salebox.stack:SetHitRectInsets(0,0,0,0)
 	frame.salebox.stack:SetMinMaxValues(1,20)
@@ -2209,7 +2210,7 @@ function private.CreateFrames()
 	frame.salebox.stack.label:SetJustifyH("LEFT")
 	frame.salebox.stack.label:SetJustifyV("CENTER")
 
-	frame.salebox.stackentry = CreateFrame("EditBox", "AppraiserSaleboxStackEntry", frame.salebox, "InputBoxTemplate")
+	frame.salebox.stackentry = CreateFrame("EditBox", "AppraiserSaleboxStackEntry", frame.salebox, "InputBoxTemplate, BackdropTemplate")
 	frame.salebox.stackentry:SetPoint("LEFT", frame.salebox.stack, "RIGHT", 10, 0)
 	frame.salebox.stackentry:SetNumeric(true)
 	frame.salebox.stackentry:SetNumber(0)
@@ -2237,7 +2238,7 @@ function private.CreateFrames()
 	end)
 	frame.salebox.stackentry:Hide()
 
-	frame.salebox.number = CreateFrame("Slider", "AppraiserSaleboxNumber", frame.salebox, "OptionsSliderTemplate")
+	frame.salebox.number = CreateFrame("Slider", "AppraiserSaleboxNumber", frame.salebox, "OptionsSliderTemplate, BackdropTemplate")
 	frame.salebox.number:SetPoint("TOPLEFT", frame.salebox.stack, "BOTTOMLEFT", 0, -15)
 	frame.salebox.number:SetHitRectInsets(0,0,0,0)
 	frame.salebox.number:SetMinMaxValues(1,1)
@@ -2291,7 +2292,7 @@ function private.CreateFrames()
 	frame.salebox.number.label:SetJustifyH("LEFT")
 	frame.salebox.number.label:SetJustifyV("CENTER")
 
-	frame.salebox.numberentry = CreateFrame("EditBox", "AppraiserSaleboxNumberEntry", frame.salebox, "InputBoxTemplate")
+	frame.salebox.numberentry = CreateFrame("EditBox", "AppraiserSaleboxNumberEntry", frame.salebox, "InputBoxTemplate, BackdropTemplate")
 	frame.salebox.numberentry:SetPoint("LEFT", frame.salebox.number, "RIGHT", 10, 0)
 	frame.salebox.numberentry:SetNumeric(false)
 	frame.salebox.numberentry:SetHeight(16)
@@ -2319,7 +2320,7 @@ function private.CreateFrames()
 	end)
 	frame.salebox.numberentry:Hide()
 
-   	frame.salebox.numberonly = CreateFrame("CheckButton", "AppraiserSaleboxNumberOnly", frame.salebox, "OptionsCheckButtonTemplate")
+   	frame.salebox.numberonly = CreateFrame("CheckButton", "AppraiserSaleboxNumberOnly", frame.salebox, "OptionsCheckButtonTemplate, BackdropTemplate")
  	frame.salebox.numberonly:SetScript("OnEnter", function(self) return frame.SetButtonTooltip(self, _TRANS('APPR_HelpTooltip_RestrictActiveAuctions') ) end)--Restrict active auctions to the 'number' value
 	frame.salebox.numberonly:SetScript("OnLeave", function() return GameTooltip:Hide() end)
    -- Would rather the distance here matched the length of the "All Stacks" text and was recalculated.
@@ -2335,7 +2336,7 @@ function private.CreateFrames()
 	frame.salebox.numberonly.label:SetText(_TRANS('APPR_Interface_Only') )--Only
 	frame.salebox.numberonly:Hide()
 
-	frame.salebox.duration = CreateFrame("Slider", "AppraiserSaleboxDuration", frame.salebox, "OptionsSliderTemplate")
+	frame.salebox.duration = CreateFrame("Slider", "AppraiserSaleboxDuration", frame.salebox, "OptionsSliderTemplate, BackdropTemplate")
 	frame.salebox.duration:SetPoint("TOPLEFT", frame.salebox.number, "BOTTOMLEFT", 0,-25)
 	frame.salebox.duration:SetHitRectInsets(0,0,0,0)
 	frame.salebox.duration:SetMinMaxValues(1,3)
@@ -2373,7 +2374,7 @@ function private.CreateFrames()
 	frame.salebox.model.label:SetPoint("RIGHT", frame.salebox.model, "LEFT", 15, 5)
 	frame.salebox.model.label:SetText(_TRANS('APPR_Interface_PricingModelUse') )--Pricing model to use:
 
-	frame.salebox.matcher = CreateFrame("CheckButton", "AppraiserSaleboxMatch", frame.salebox, "OptionsCheckButtonTemplate")
+	frame.salebox.matcher = CreateFrame("CheckButton", "AppraiserSaleboxMatch", frame.salebox, "OptionsCheckButtonTemplate, BackdropTemplate")
  	frame.salebox.matcher:SetScript("OnEnter", function(self) return frame.SetButtonTooltip(self, _TRANS('APPR_HelpTooltip_EnablesMatchersCalculatingPrices') ) end)--Enables the use of matchers (eg Undercut) when calculating prices
 	frame.salebox.matcher:SetScript("OnLeave", function() return GameTooltip:Hide() end)
 	frame.salebox.matcher:SetPoint("RIGHT", frame.salebox, "RIGHT", -158, -30)
@@ -2387,7 +2388,7 @@ function private.CreateFrames()
 	frame.salebox.matcher.label:SetPoint("BOTTOMLEFT", frame.salebox.matcher, "BOTTOMRIGHT", 0, 5)
 	frame.salebox.matcher.label:SetText(_TRANS('APPR_Interface_EnablePriceMatching') )--Enable price matching
 
-	frame.salebox.ignore = CreateFrame("CheckButton", "AppraiserSaleboxIgnore", frame.salebox, "OptionsCheckButtonTemplate")
+	frame.salebox.ignore = CreateFrame("CheckButton", "AppraiserSaleboxIgnore", frame.salebox, "OptionsCheckButtonTemplate, BackdropTemplate")
 	frame.salebox.ignore:SetScript("OnEnter", function(self) return frame.SetButtonTooltip(self, _TRANS('APPR_HelpTooltip_RemovesItemListing') ) end)--Removes this item from the item listing
 	frame.salebox.ignore:SetScript("OnLeave", function() return GameTooltip:Hide() end)
 	frame.salebox.ignore:SetPoint("TOPRIGHT", frame.salebox, "TOPRIGHT", -160, -3)
@@ -2401,7 +2402,7 @@ function private.CreateFrames()
 	frame.salebox.ignore.label:SetPoint("BOTTOMLEFT", frame.salebox.ignore, "BOTTOMRIGHT", 0, 6)
 	frame.salebox.ignore.label:SetText(_TRANS('APPR_Interface_HideThisItem') )--Hide this item
 
-	frame.salebox.bulk = CreateFrame("CheckButton", "AppraiserSaleboxBulk", frame.salebox, "OptionsCheckButtonTemplate")
+	frame.salebox.bulk = CreateFrame("CheckButton", "AppraiserSaleboxBulk", frame.salebox, "OptionsCheckButtonTemplate, BackdropTemplate")
 	frame.salebox.bulk:SetScript("OnEnter", function(self) return frame.SetButtonTooltip(self, _TRANS('APPR_HelpTooltip_FlagsBatchPosting') ) end)--Flags this item to be included in Batch Posting
 	frame.salebox.bulk:SetScript("OnLeave", function() return GameTooltip:Hide() end)
 	frame.salebox.bulk:SetPoint("TOPRIGHT", frame.salebox.ignore, "BOTTOMRIGHT", 0, 3)
@@ -2415,25 +2416,31 @@ function private.CreateFrames()
 	frame.salebox.bulk.label:SetPoint("BOTTOMLEFT", frame.salebox.bulk, "BOTTOMRIGHT", 0, 6)
 	frame.salebox.bulk.label:SetText(_TRANS('APPR_Interface_EnableBatchPosting') )--Enable batch posting
 
-	frame.salebox.bid = CreateFrame("Frame", "AppraiserSaleboxBid", frame.salebox, "MoneyInputFrameTemplate")
+	frame.salebox.bid = CreateFrame("Frame", "AppraiserSaleboxBid", frame.salebox, "MoneyInputFrameTemplate, BackdropTemplate")
 	frame.salebox.bid:SetPoint("RIGHT", frame.salebox, "RIGHT", 0, 20)
 	frame.salebox.bid:SetScript("OnEnter", function(self) return frame.SetButtonTooltip(self, _TRANS('APPR_HelpTooltip_EnterBidAmount') ) end)--Enter new bid amount to set a Fixed Price
 	frame.salebox.bid:SetScript("OnLeave", function() return GameTooltip:Hide() end)
 	MoneyInputFrame_SetOnValueChangedFunc(frame.salebox.bid, function() frame.SyncMoneyFrameStackBid() frame.updated = true end)
 	frame.salebox.bid.element = "bid"
 	frame.salebox.bid:Hide()
+
+    Mixin(AppraiserSaleboxBidGold, BackdropTemplateMixin)
 	AppraiserSaleboxBidGold:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		tile = true, tileSize = 32,
 		insets = { left = -2, right = 3, top = 4, bottom = 2}
 	})
 	AppraiserSaleboxBidGold:SetBackdropColor(0,0,0, 0)
+	
+    Mixin(AppraiserSaleboxBidSilver, BackdropTemplateMixin)
 	AppraiserSaleboxBidSilver:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		tile = true, tileSize = 32,
 		insets = { left = -2, right = 12, top = 4, bottom = 2}
 	})
 	AppraiserSaleboxBidSilver:SetBackdropColor(0,0,0, 0)
+
+    Mixin(AppraiserSaleboxBidCopper, BackdropTemplateMixin)
 	AppraiserSaleboxBidCopper:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		tile = true, tileSize = 32,
@@ -2441,26 +2448,31 @@ function private.CreateFrames()
 	})
 	AppraiserSaleboxBidCopper:SetBackdropColor(0,0,0, 0)
 
-
-	frame.salebox.bid.stack = CreateFrame("Frame", "AppraiserSaleboxBidStack", frame.salebox, "MoneyInputFrameTemplate")
+	frame.salebox.bid.stack = CreateFrame("Frame", "AppraiserSaleboxBidStack", frame.salebox, "MoneyInputFrameTemplate, BackdropTemplate")
 	frame.salebox.bid.stack:SetPoint("RIGHT", frame.salebox, "RIGHT", 0, 20)
 	frame.salebox.bid.stack:SetScript("OnEnter", function(self) return frame.SetButtonTooltip(self, _TRANS('APPR_HelpTooltip_EnterBidAmount') ) end)--Enter new bid amount to set a Fixed Price
 	frame.salebox.bid.stack:SetScript("OnLeave", function() return GameTooltip:Hide() end)
 	MoneyInputFrame_SetOnValueChangedFunc(frame.salebox.bid.stack, function() frame.SyncMoneyFrameSingleBid() frame.updated = true end)
 	frame.salebox.bid.stack.element = "bidStack"
 	frame.salebox.bid.stack:Hide()
+	
+    Mixin(AppraiserSaleboxBidStackGold, BackdropTemplateMixin)
 	AppraiserSaleboxBidStackGold:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		tile = true, tileSize = 32,
 		insets = { left = -2, right = 3, top = 4, bottom = 2}
 	})
 	AppraiserSaleboxBidStackGold:SetBackdropColor(0,0,0, 0)
+
+    Mixin(AppraiserSaleboxBidStackSilver, BackdropTemplateMixin)
 	AppraiserSaleboxBidStackSilver:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		tile = true, tileSize = 32,
 		insets = { left = -2, right = 12, top = 4, bottom = 2}
 	})
 	AppraiserSaleboxBidStackSilver:SetBackdropColor(0,0,0, 0)
+
+    Mixin(AppraiserSaleboxBidStackCopper, BackdropTemplateMixin)
 	AppraiserSaleboxBidStackCopper:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		tile = true, tileSize = 32,
@@ -2468,26 +2480,31 @@ function private.CreateFrames()
 	})
 	AppraiserSaleboxBidStackCopper:SetBackdropColor(0,0,0, 0)
 
-
-	frame.salebox.buy = CreateFrame("Frame", "AppraiserSaleboxBuy", frame.salebox, "MoneyInputFrameTemplate")
+	frame.salebox.buy = CreateFrame("Frame", "AppraiserSaleboxBuy", frame.salebox, "MoneyInputFrameTemplate, BackdropTemplate")
 	frame.salebox.buy:SetPoint("TOPLEFT", frame.salebox.bid, "BOTTOMLEFT", 0,-5)
 	frame.salebox.buy:SetScript("OnEnter", function(self) return frame.SetButtonTooltip(self, _TRANS('APPR_HelpTooltip_EnterBuyoutFixedPrice') ) end)--Enter new buyout amount to set a Fixed Price
 	frame.salebox.buy:SetScript("OnLeave", function() return GameTooltip:Hide() end)
 	MoneyInputFrame_SetOnValueChangedFunc(frame.salebox.buy, function() frame.SyncMoneyFrameStackBuy() frame.updated = true end)
 	frame.salebox.buy.element = "buy"
 	frame.salebox.buy:Hide()
+
+    Mixin(AppraiserSaleboxBuyGold, BackdropTemplateMixin)
 	AppraiserSaleboxBuyGold:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		tile = true, tileSize = 32,
 		insets = { left = -2, right = 3, top = 4, bottom = 2}
 	})
 	AppraiserSaleboxBuyGold:SetBackdropColor(0,0,0, 0)
+
+    Mixin(AppraiserSaleboxBuySilver, BackdropTemplateMixin)
 	AppraiserSaleboxBuySilver:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		tile = true, tileSize = 32,
 		insets = { left = -2, right = 12, top = 4, bottom = 2}
 	})
 	AppraiserSaleboxBuySilver:SetBackdropColor(0,0,0, 0)
+
+    Mixin(AppraiserSaleboxBuyCopper, BackdropTemplateMixin)
 	AppraiserSaleboxBuyCopper:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		tile = true, tileSize = 32,
@@ -2500,25 +2517,31 @@ function private.CreateFrames()
 	MoneyInputFrame_SetNextFocus(frame.salebox.buy, AppraiserSaleboxBidGold)
 	MoneyInputFrame_SetPreviousFocus(frame.salebox.buy, AppraiserSaleboxBidCopper)
 
-	frame.salebox.buy.stack = CreateFrame("Frame", "AppraiserSaleboxBuyStack", frame.salebox, "MoneyInputFrameTemplate")
+	frame.salebox.buy.stack = CreateFrame("Frame", "AppraiserSaleboxBuyStack", frame.salebox, "MoneyInputFrameTemplate, BackdropTemplate")
 	frame.salebox.buy.stack:SetPoint("TOPLEFT", frame.salebox.bid.stack, "BOTTOMLEFT", 0,-5)
 	frame.salebox.buy.stack:SetScript("OnEnter", function(self) return frame.SetButtonTooltip(self, _TRANS('APPR_HelpTooltip_EnterBuyoutFixedPrice') ) end)--Enter new buyout amount to set a Fixed Price
 	frame.salebox.buy.stack:SetScript("OnLeave", function() return GameTooltip:Hide() end)
 	MoneyInputFrame_SetOnValueChangedFunc(frame.salebox.buy.stack, function() frame.SyncMoneyFrameSingleBuy() frame.updated = true end)
 	frame.salebox.buy.stack.element = "buyStack"
 	frame.salebox.buy.stack:Hide()
+
+	Mixin(AppraiserSaleboxBuyStackGold, BackdropTemplateMixin)
 	AppraiserSaleboxBuyStackGold:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		tile = true, tileSize = 32,
 		insets = { left = -2, right = 3, top = 4, bottom = 2}
 	})
 	AppraiserSaleboxBuyStackGold:SetBackdropColor(0,0,0, 0)
+
+	Mixin(AppraiserSaleboxBuyStackSilver, BackdropTemplateMixin)
 	AppraiserSaleboxBuyStackSilver:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		tile = true, tileSize = 32,
 		insets = { left = -2, right = 12, top = 4, bottom = 2}
 	})
 	AppraiserSaleboxBuyStackSilver:SetBackdropColor(0,0,0, 0)
+
+	Mixin(AppraiserSaleboxBuyStackCopper, BackdropTemplateMixin)
 	AppraiserSaleboxBuyStackCopper:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		tile = true, tileSize = 32,
@@ -2534,7 +2557,7 @@ function private.CreateFrames()
 
 
 	--Button for Bid  frame  to toggle stack/single mode
-	frame.switchToStack = CreateFrame("Button", nil, frame.salebox, "OptionsButtonTemplate")
+	frame.switchToStack = CreateFrame("Button", nil, frame.salebox, "OptionsButtonTemplate, BackdropTemplate")
 	frame.switchToStack:SetPoint("RIGHT", frame.salebox.bid, "LEFT", -10, 0)
 	frame.switchToStack:SetText("")
 	local font = frame.switchToStack:GetNormalFontObject()
@@ -2552,7 +2575,7 @@ function private.CreateFrames()
 	frame.switchToStack:Enable()
 
 	--Button for Buy  frame to toggle stack/single mode
-	frame.switchToStack2 = CreateFrame("Button", nil, frame.salebox, "OptionsButtonTemplate")
+	frame.switchToStack2 = CreateFrame("Button", nil, frame.salebox, "OptionsButtonTemplate, BackdropTemplate")
 	frame.switchToStack2:SetPoint("RIGHT", frame.salebox.buy, "LEFT", -10, 0)
 	frame.switchToStack2:SetText("")
 	frame.switchToStack2:SetNormalFontObject(font)
@@ -2568,7 +2591,7 @@ function private.CreateFrames()
 	frame.switchToStack2:Enable()
 
 
-	frame.go = CreateFrame("Button", nil, frame, "OptionsButtonTemplate")
+	frame.go = CreateFrame("Button", nil, frame, "OptionsButtonTemplate, BackdropTemplate")
 	frame.go:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -7,15)
 	frame.go:SetText(_TRANS('APPR_Interface_PostItems') )--Post items
 	frame.go:SetWidth(80)
@@ -2578,7 +2601,7 @@ function private.CreateFrames()
 	frame.go.postType = "single"
 	frame.go:Disable()
 
-	frame.gobatch = CreateFrame("Button", nil, frame, "OptionsButtonTemplate")
+	frame.gobatch = CreateFrame("Button", nil, frame, "OptionsButtonTemplate, BackdropTemplate")
 	frame.gobatch:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -87,15)
 	frame.gobatch:SetText(_TRANS('APPR_Interface_BatchPost') )--Batch post
 	frame.gobatch:SetWidth(80)
@@ -2589,7 +2612,7 @@ function private.CreateFrames()
 	frame.gobatch.postType = "batch"
 	frame.gobatch:Enable()
 
-	frame.refresh = CreateFrame("Button", nil, frame, "OptionsButtonTemplate")
+	frame.refresh = CreateFrame("Button", nil, frame, "OptionsButtonTemplate, BackdropTemplate")
 	frame.refresh:SetPoint("BOTTOMRIGHT", frame, "BOTTOMRIGHT", -167,15)
 	frame.refresh:SetText("Refresh")
 	frame.refresh:SetWidth(80)
@@ -2604,7 +2627,7 @@ function private.CreateFrames()
 	frame.age:SetJustifyH("RIGHT")
 	--frame.age:SetJustifyV("BOTTOM")
 
-	frame.cancel = CreateFrame("Button", "AucAdvAppraiserCancelButton", frame, "OptionsButtonTemplate")
+	frame.cancel = CreateFrame("Button", "AucAdvAppraiserCancelButton", frame, "OptionsButtonTemplate, BackdropTemplate")
 	frame.cancel:SetPoint("BOTTOMLEFT", frame, "BOTTOMLEFT", 180, 15)
 	frame.cancel:SetWidth(22)
 	frame.cancel:SetHeight(18)
@@ -2648,7 +2671,7 @@ function private.CreateFrames()
 		end
 	end
 
-	frame.manifest = CreateFrame("Frame", nil, frame)
+	frame.manifest = CreateFrame("Frame", nil, frame, "BackdropTemplate")
 	frame.manifest:SetBackdrop({
 		bgFile = "Interface\\Tooltips\\ChatBubble-Background",
 		edgeFile = "Interface\\Tooltips\\UI-Tooltip-Border",
@@ -2663,7 +2686,7 @@ function private.CreateFrames()
 	frame.manifest:SetFrameLevel(AuctionFrame:GetFrameLevel())
 	frame.manifest:Hide()
 
-	frame.manifest.close = CreateFrame("Button", nil, frame.manifest)
+	frame.manifest.close = CreateFrame("Button", nil, frame.manifest, "BackdropTemplate")
 	frame.manifest.close:SetNormalTexture("Interface\\Buttons\\UI-Panel-MinimizeButton-Up")
 	frame.manifest.close:SetHighlightTexture("Interface\\Buttons\\UI-Panel-MinimizeButton-Highlight")
 	frame.manifest.close:SetPushedTexture("Interface\\Buttons\\UI-Panel-MinimizeButton-Down")
@@ -2752,7 +2775,7 @@ function private.CreateFrames()
 	end
 	frame.manifest.lines = lines
 
-	frame.imageview = CreateFrame("Frame", nil, frame)
+	frame.imageview = CreateFrame("Frame", nil, frame, "BackdropTemplate")
 	frame.imageview:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		edgeFile = "Interface/Tooltips/UI-Tooltip-Border",
@@ -2864,7 +2887,7 @@ function private.CreateFrames()
 
 	frame.imageview.sheet:EnableSelect(true)
 
-	frame.imageview.purchase = CreateFrame("Frame", nil, frame.imageview)
+	frame.imageview.purchase = CreateFrame("Frame", nil, frame.imageview, "BackdropTemplate")
 	frame.imageview.purchase:SetPoint("TOPLEFT", frame.imageview, "BOTTOMLEFT", 0, 4)
 	frame.imageview.purchase:SetPoint("BOTTOMRIGHT", frame.imageview, "BOTTOMRIGHT", 0, -16)
 	frame.imageview.purchase:SetBackdrop({

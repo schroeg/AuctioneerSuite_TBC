@@ -1,7 +1,7 @@
 ## Title: Auc:ScanData
 ## Notes: Allows Auctioneer to delay loading the, probably, large auction scan dataset until it is needed.
 ##
-## Interface: 80200
+## Interface: 20501
 ## LoadOnDemand: 1
 ## SavedVariables: AucScanData
 ## Dependencies: Auc-Advanced

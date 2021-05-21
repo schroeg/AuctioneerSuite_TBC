@@ -566,7 +566,7 @@ function Swatter.ErrorClicked()
 end
 
 -- Create our error message frame
-Swatter.Error = CreateFrame("Frame", "SwatterErrorFrame", UIParent)
+Swatter.Error = CreateFrame("Frame", "SwatterErrorFrame", UIParent, "BackdropTemplate")
 Swatter.Error:Hide()
 Swatter.Error:SetPoint("CENTER", "UIParent", "CENTER")
 Swatter.Error:SetFrameStrata("TOOLTIP")

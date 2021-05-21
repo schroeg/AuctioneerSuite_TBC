@@ -69,7 +69,7 @@ local DEV_VERSION = "7.7.DEV"
 local MINIMUM_TOC = 80000
 local MINIMUM_CLIENT = "8.0.0"
 local MINIMUM_CLASSIC = 11300
-local MAXIMUM_CLASSIC = 11399
+local MAXIMUM_CLASSIC = 29999
 local MINIMUM_CLIENT_CLASSIC = "1.13.0"
 -- MINIMUM_BUILD is optional, and should only be used where TOC is not sufficient; otherwise it should be commented out
 -- local MINIMUM_BUILD = 00000

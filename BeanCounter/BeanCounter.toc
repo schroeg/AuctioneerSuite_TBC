@@ -1,7 +1,7 @@
 ## Title: BeanCounter
 ## Notes: Auction House transaction history to include purchases and sales, failures and successes.
 ##
-## Interface: 80200
+## Interface: 20501
 ## Dependencies: Stubby
 ## OptionalDeps: !nLog, Babylonian, DebugLib, SlideBar, Auc-Advanced, Configator, LibExtraTip, TipHelper, LibDataBroker
 ## SavedVariables: BeanCounterDB, BeanCounterDBSettings, BeanCounterDBNames, BeanCounterAccountDB, BeanCounterMailPatch

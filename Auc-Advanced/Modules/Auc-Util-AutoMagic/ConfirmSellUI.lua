@@ -200,7 +200,7 @@ end
 local SelectBox = LibStub:GetLibrary("SelectBox")
 local ScrollSheet = LibStub:GetLibrary("ScrollSheet")
 
-lib.confirmsellui = CreateFrame("Frame", "confirmsellui", UIParent); lib.confirmsellui:Hide()
+lib.confirmsellui = CreateFrame("Frame", "confirmsellui", UIParent, "BackdropTemplate"); lib.confirmsellui:Hide()
 function lib.makeconfirmsellui()
 	lib.confirmsellui:ClearAllPoints()
 	lib.confirmsellui:SetPoint("CENTER", UIParent, "CENTER", 1,1)
@@ -258,7 +258,7 @@ function lib.makeconfirmsellui()
 	-- [name of frame]:SetPoint("[relative to point on my frame]","[frame we want to be relative to]","[point on relative frame]",-left/+right, -down/+up)
 
 	--Create the autosell list results frame
-	lib.confirmsellui.resultlist = CreateFrame("Frame", nil, lib.confirmsellui)
+	lib.confirmsellui.resultlist = CreateFrame("Frame", nil, lib.confirmsellui, "BackdropTemplate")
 	lib.confirmsellui.resultlist:SetBackdrop({
 		bgFile = "Interface/Tooltips/UI-Tooltip-Background",
 		edgeFile = "Interface/Tooltips/UI-Tooltip-Border",

@@ -547,7 +547,7 @@ local ProgressBarFrames = {}
 local ActiveProgressBars = {}
 -- generate new bars as needed
 local function newBar()
-	local bar = CreateFrame("STATUSBAR", nil, UIParent, "TextStatusBar")
+	local bar = CreateFrame("STATUSBAR", nil, UIParent, "TextStatusBar,BackdropTemplate")
 	bar:SetWidth(300)
 	bar:SetHeight(18)
 	bar:SetBackdrop({

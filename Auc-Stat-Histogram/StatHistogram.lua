@@ -412,7 +412,7 @@ function private.SetupConfigGui(gui)
 	frame.name:SetText("Insert or Alt-Click Item to start")
 	frame.name:SetTextColor(0.5, 0.5, 0.7)
 
-	frame.bargraph = CreateFrame("Frame", nil, frame)
+	frame.bargraph = CreateFrame("Frame", nil, frame, "BackdropTemplate")
 	frame.bargraph:SetPoint("TOPLEFT", frame, "TOPLEFT", 30, -260)
 	frame.bargraph:SetPoint("TOPRIGHT", frame, "TOPRIGHT", -30, -260)
 	frame.bargraph:SetHeight(300)

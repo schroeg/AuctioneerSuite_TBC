@@ -154,7 +154,7 @@ function private.HookAH()
 	private.buttons.getall.tex:SetTexCoord(0.75, 1, 0, 1)
 	private.buttons.getall.tex:SetVertexColor(0.3, 0.7, 1.0)
 
-	local msg = CreateFrame("Frame", nil, UIParent)
+	local msg = CreateFrame("Frame", nil, UIParent, "BackdropTemplate")
 	private.message = msg
 	msg:Hide()
 	msg:SetPoint("CENTER", "UIParent", "CENTER")
